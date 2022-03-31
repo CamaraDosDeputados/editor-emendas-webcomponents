@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "bierner.lit-html",
     "dbaeumer.vscode-eslint",
     "DotJoshJohnson.xml",
     "eamodio.gitlens",
@@ -11,6 +10,7 @@
     "formulahendry.code-runner",
     "Gruntfuggly.todo-tree",
     "ms-vscode.vscode-typescript-tslint-plugin",
+    "runem.lit-plugin",
     "SonarSource.sonarlint-vscode",
     "steoates.autoimport",
     "wix.vscode-import-cost"

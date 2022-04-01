@@ -42,6 +42,7 @@ export class MyElement extends LitElement {
 
   private _onClick(): void {
     this.count++;
+    this.dispatchEvent(new CustomEvent('count', { detail: this.count }))
   }
 
   static foo(): string {

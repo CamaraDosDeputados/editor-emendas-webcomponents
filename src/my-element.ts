@@ -16,19 +16,19 @@ export class MyElement extends LitElement {
       padding: 16px;
       max-width: 800px;
     }
-  `
+  `;
 
   /**
    * The name to say "Hello" to.
    */
   @property()
-  name = 'World'
+  name = 'World';
 
   /**
    * The number of times the button has been clicked.
    */
   @property({ type: Number })
-  count = 0
+  count = 0;
 
   render(): TemplateResult {
     return html`
@@ -42,7 +42,7 @@ export class MyElement extends LitElement {
 
   private _onClick(): void {
     this.count++;
-    this.dispatchEvent(new CustomEvent('count', { detail: this.count }))
+    this.dispatchEvent(new CustomEvent('count', { detail: this.count }));
   }
 
   static foo(): string {
@@ -52,6 +52,6 @@ export class MyElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement
+    'my-element': MyElement;
   }
 }

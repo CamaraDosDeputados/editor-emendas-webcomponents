@@ -15,13 +15,33 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "vitest",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "lint": "eslint --ext .ts . --ignore-path .gitignore --ignore-path .eslintignore && prettier \"**/*.ts\" --check --ignore-path .gitignore --ignore-path .eslintignore",
+    "format": "eslint --ext .ts . --fix --ignore-path .gitignore --ignore-path .eslintignore && prettier \"**/*.ts\" --write --ignore-path .gitignore --ignore-path .eslintignore"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
   },
   "dependencies": {
     "lit": "^2.0.2"
   },
   "devDependencies": {
+    "@open-wc/eslint-config": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "happy-dom": "^2.54.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
     "vitest": "^0.8.1"

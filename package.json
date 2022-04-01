@@ -17,17 +17,8 @@
     "test": "vitest",
     "test:watch": "vitest watch",
     "lint": "eslint --ext .ts . --ignore-path .gitignore --ignore-path .eslintignore && prettier \"**/*.ts\" --check --ignore-path .gitignore --ignore-path .eslintignore",
-    "format": "eslint --ext .ts . --fix --ignore-path .gitignore --ignore-path .eslintignore && prettier \"**/*.ts\" --write --ignore-path .gitignore --ignore-path .eslintignore"
-  },
-  "eslintConfig": {
-    "extends": [
-      "@open-wc/eslint-config",
-      "eslint-config-prettier"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid"
+    "format": "eslint --ext .ts . --fix --ignore-path .gitignore --ignore-path .eslintignore && prettier \"**/*.ts\" --write --ignore-path .gitignore --ignore-path .eslintignore",
+    "prepare": "husky install"
   },
   "dependencies": {
     "lit": "^2.0.2"
@@ -47,15 +38,17 @@
     "vitest": "^0.8.1"
   },
   "customElements": "custom-elements.json",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "*.ts": "eslint --cache --fix"
   }
 }

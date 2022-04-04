@@ -14,7 +14,6 @@ export class FormBusca extends LitElement {
     return this;
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   render(): TemplateResult {
     {
       return html`
@@ -52,41 +51,39 @@ export class FormBusca extends LitElement {
             background-color: var(--etl-green);
           }
         </style>
-        <div class="container">
-          <form class="was-validated eta-search-form mt-3 mt-md-5 mb-3 mb-md-5">
-            <input
-              type="search"
-              class="form-control eta-search-input"
-              placeholder="Sigla"
-              aria-label="Sigla"
-              .value=${this.sigla}
-              required="required"
-            />
-            <input
-              type="number"
-              class="form-control eta-search-input"
-              placeholder="Número"
-              aria-label="Número"
-              .valueAsNumber=${this.numero}
-            />
-            <input
-              type="number"
-              class="form-control eta-search-input"
-              placeholder="Ano"
-              aria-label="Ano"
-              required="required"
-              .valueAsNumber=${this.ano}
-            />
-            <button
-              type="button"
-              :disabled="isDisabled"
-              @click="buscar"
-              class="btn btn-primary eta-search-button"
-            >
-              Pesquisar
-            </button>
-          </form>
-        </div>
+        <form class="was-validated eta-search-form mt-3 mt-md-5 mb-3 mb-md-5">
+          <input
+            type="search"
+            class="form-control eta-search-input"
+            placeholder="Sigla"
+            aria-label="Sigla"
+            .value=${this.sigla}
+            required="required"
+          />
+          <input
+            type="number"
+            class="form-control eta-search-input"
+            placeholder="Número"
+            aria-label="Número"
+            .valueAsNumber=${this.numero}
+          />
+          <input
+            type="number"
+            class="form-control eta-search-input"
+            placeholder="Ano"
+            aria-label="Ano"
+            required="required"
+            .valueAsNumber=${this.ano}
+          />
+          <button
+            type="button"
+            :disabled="isDisabled"
+            @click="buscar"
+            class="btn btn-primary eta-search-button"
+          >
+            Pesquisar
+          </button>
+        </form>
       `;
     }
   }

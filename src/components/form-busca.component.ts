@@ -7,11 +7,11 @@ export class FormBusca extends LitElement {
   static styles = formBuscaCSS;
 
   @property({ type: String })
-  sigla = '';
-  @property({ type: Number })
+  sigla = 'MPV';
+  @property({ type: String })
   numero = null;
-  @property({ type: Number })
-  ano = null;
+  @property({ type: String })
+  ano = '2022';
 
   render(): TemplateResult {
     {
@@ -26,19 +26,19 @@ export class FormBusca extends LitElement {
             required="required"
           />
           <input
-            type="number"
+            type="search"
             class="form-control eta-search-input"
             placeholder="Número"
             aria-label="Número"
-            .valueAsNumber=${this.numero}
+            .value=${this.numero}
           />
           <input
-            type="number"
+            type="search"
             class="form-control eta-search-input"
             placeholder="Ano"
             aria-label="Ano"
             required="required"
-            .valueAsNumber=${this.ano}
+            .value=${this.ano}
           />
           <button
             type="button"

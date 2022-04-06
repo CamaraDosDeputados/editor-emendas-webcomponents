@@ -100,7 +100,7 @@ export const formBuscaCSS = css`
     text-transform: none;
   }
   button,
-type=button] {
+  [type='button'] {
     -webkit-appearance: button;
   }
   button:not(:disabled),

@@ -1,6 +1,44 @@
 import { css } from 'lit';
 
 export const dashboardEmendasCSS = css`
+  :root {
+    --bs-eta-border-width: 1px;
+    --bs-eta-border-radius: 0.375rem;
+  }
+  .container {
+    --bs-eta-gutter-x: 1.5rem;
+    --bs-eta-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-eta-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-eta-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  }
   .d-md-none {
     display: none !important;
   }
@@ -118,6 +156,15 @@ export const dashboardEmendasCSS = css`
   fade:not(.show) {
     opacity: 0;
   }
+  .row {
+    --bs-eta-gutter-x: 1.5rem;
+    --bs-eta-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-eta-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-eta-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-eta-gutter-x));
+  }
   .row > * {
     flex-shrink: 0;
     width: 100%;
@@ -175,45 +222,12 @@ export const dashboardEmendasCSS = css`
     ) !important;
   }
   h5 {
+    --bs-eta-heading-color: ;
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
     color: var(--bs-eta-heading-color);
     font-size: 1.25rem;
-  }
-  .container {
-    --bs-eta-gutter-x: 1.5rem;
-    --bs-eta-gutter-y: 0;
-    width: 100%;
-    padding-right: calc(var(--bs-eta-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-eta-gutter-x) * 0.5);
-    margin-right: auto;
-    margin-left: auto;
-  }
-  @media (min-width: 576px) {
-    .container {
-      max-width: 540px;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 720px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 960px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px;
-    }
-  }
-  @media (min-width: 1400px) {
-    .container {
-      max-width: 1320px;
-    }
   }
 `;

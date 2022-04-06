@@ -1,9 +1,15 @@
 import { css } from 'lit';
 
 export const dashboardEmendasCSS = css`
-  :root {
-    --bs-eta-border-width: 1px;
-    --bs-eta-border-radius: 0.375rem;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
   }
   .container {
     --bs-eta-gutter-x: 1.5rem;
@@ -78,9 +84,12 @@ export const dashboardEmendasCSS = css`
     cursor: default;
   }
   .nav-tabs {
+    --bs-eta-border-width: 1px;
     border-bottom: var(--bs-eta-border-width) solid #dee2e6;
   }
   .nav-tabs .nav-link {
+    --bs-eta-border-radius: 0.375rem;
+    --bs-eta-border-width: 1px;
     margin-bottom: calc(var(--bs-eta-border-width) * -1);
     background: none;
     border: var(--bs-eta-border-width) solid transparent;
@@ -190,7 +199,7 @@ export const dashboardEmendasCSS = css`
     --bs-eta-badge-font-size: 0.75em;
     --bs-eta-badge-font-weight: 700;
     --bs-eta-badge-color: #fff;
-    --bs-eta-badge-border-radius: var(--bs-eta-border-radius);
+    --bs-eta-badge-border-radius: 0.375rem;
     display: inline-block;
     padding: var(--bs-eta-badge-padding-y) var(--bs-eta-badge-padding-x);
     font-size: var(--bs-eta-badge-font-size);

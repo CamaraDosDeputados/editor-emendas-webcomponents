@@ -42,3 +42,7 @@ body {
 html {
     height: -webkit-fill-available;
 }
+
+.bs-eta {
+    overflow: hidden;
+}

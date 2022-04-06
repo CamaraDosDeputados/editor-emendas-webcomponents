@@ -191,7 +191,7 @@ export const dashboardEmendasCSS = css`
   }
   .col-md-6 {
     flex: 0 0 auto;
-    width: 50%;
+    width: 41%;
   }
   .badge {
     --bs-eta-badge-padding-x: 0.65em;

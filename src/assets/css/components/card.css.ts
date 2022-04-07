@@ -1,6 +1,6 @@
 import { css } from 'lit';
 
-export const cardMinhasEmendasCSS = css`
+export const cardCSS = css`
   .list-group-item {
     position: relative;
     display: block;

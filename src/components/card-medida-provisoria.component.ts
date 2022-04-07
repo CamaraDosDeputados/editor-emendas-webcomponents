@@ -1,11 +1,12 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { cardMinhasEmendasCSS } from '../assets/css/components/card-minhas-emendas.css';
+import { cardCSS } from '../assets/css/components/card.css';
 import { cardMedidaProvisoriaCSS } from '../assets/css/components/card-medida-provisoria.css';
+import './card-menu.component.ts';
 
 @customElement('card-medida-provisoria')
 export class cardMedidaProvisoria extends LitElement {
-  static styles = [cardMinhasEmendasCSS, cardMedidaProvisoriaCSS];
+  static styles = [cardCSS, cardMedidaProvisoriaCSS];
 
   render(): TemplateResult {
     {
@@ -17,9 +18,9 @@ export class cardMedidaProvisoria extends LitElement {
         >
           <div class="d-flex w-100 justify-content-between">
             <h6 class="list-group-item-title">MPV 1028/2022</h6>
-            <div
-              w3-include-html="/src/views/dashboard-html/DashboardMenuEmendas.html"
-            ></div>
+            <div>
+              <card-menu></card-menu>
+            </div>
           </div>
           <span class="list-group-item-data">14/03/2021</span>
         </a>

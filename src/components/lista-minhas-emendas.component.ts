@@ -9,7 +9,7 @@ export class ListaMinhasEmendas extends LitElement {
   static styles = listaMinhasEmendasCSS;
 
   @property()
-  tipoLista?: string;
+  minhasEmendas?: boolean;
 
   render(): TemplateResult {
     {
@@ -19,7 +19,7 @@ export class ListaMinhasEmendas extends LitElement {
           <div class="card-dashboard-body">
             <div class="list-group">
               <div>
-                ${this.tipoLista === 'minhas-emendas'
+                ${this.minhasEmendas
                   ? html`
                       <card-minhas-emendas></card-minhas-emendas>
                       <card-minhas-emendas></card-minhas-emendas>

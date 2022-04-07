@@ -2,6 +2,7 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { listaMinhasEmendasCSS } from '../assets/css/components/lista-minhas-emendas.css';
 import './card-minhas-emendas.component.ts';
+import './card-medida-provisoria.component.ts';
 
 @customElement('lista-minhas-emendas')
 export class ListaMinhasEmendas extends LitElement {
@@ -26,7 +27,7 @@ export class ListaMinhasEmendas extends LitElement {
                       <card-minhas-emendas></card-minhas-emendas>
                       <card-minhas-emendas></card-minhas-emendas>
                     `
-                  : html`<div></div>`}
+                  : html`<card-medida-provisoria></card-medida-provisoria>`}
               </div>
             </div>
           </div>

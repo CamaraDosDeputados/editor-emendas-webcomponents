@@ -2,7 +2,6 @@ import { css } from 'lit';
 
 export const cardMinhasEmendasCSS = css`
   .list-group-item {
-    --bs-eta-border-width: 1px;
     position: relative;
     display: block;
     padding: 0.5rem 1rem;
@@ -66,16 +65,13 @@ export const cardMinhasEmendasCSS = css`
     width: 100%;
   }
   .list-group-item-data {
-    --bs-eta-gray-500: #adb5bd;
     color: var(--bs-eta-gray-500);
   }
   a {
-    --bs-eta-link-color: #0d6efd;
     color: var(--bs-eta-link-color);
     text-decoration: underline;
   }
   a:hover {
-    --bs-eta-link-hover-color: #0a58ca;
     color: var(--bs-eta-link-hover-color);
   }
   a:not([href]):not([class]),

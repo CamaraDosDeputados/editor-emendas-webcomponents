@@ -10,10 +10,17 @@ export class ListaMinhasEmendas extends LitElement {
   render(): TemplateResult {
     {
       return html`
+        <slot></slot>
         <div class="card-dashboard">
           <div class="card-dashboard-body">
             <div class="list-group">
-              <card-minhas-emendas></card-minhas-emendas>
+              <div>
+                <card-minhas-emendas></card-minhas-emendas>
+                <card-minhas-emendas></card-minhas-emendas>
+                <card-minhas-emendas></card-minhas-emendas>
+                <card-minhas-emendas></card-minhas-emendas>
+                <card-minhas-emendas></card-minhas-emendas>
+              </div>
             </div>
           </div>
         </div>

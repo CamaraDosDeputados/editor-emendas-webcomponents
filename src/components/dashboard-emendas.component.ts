@@ -11,6 +11,7 @@ export class DashboardEmendas extends LitElement {
   render(): TemplateResult {
     {
       return html`
+      <div id="app" class="bs-eta">
         <div class="container">
           <form-busca></form-busca>
           <div class="d-md-none">
@@ -50,6 +51,7 @@ export class DashboardEmendas extends LitElement {
               </div>
             </div>
           </div>
+        </div>
         </div>
       `;
     }

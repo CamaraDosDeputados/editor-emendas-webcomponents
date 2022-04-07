@@ -28,10 +28,10 @@ export class DashboardEmendas extends LitElement {
             </ul>
             <div class="tab-content" id="tabContent">
               <div class="tab-pane fade show active" id="minhasEmendas" role="tabpanel" aria-labelledby="minhas-emendas-tab">
-                <lista-minhas-emendas></lista-minhas-emendas>
+                <lista-minhas-emendas tipoLista="minhas-emendas"></lista-minhas-emendas>
               </div>
               <div class="tab-pane fade" id="medidasProvisorias" role="tabpanel" aria-labelledby="medidas-provisorias-tab">
-                <lista-minhas-emendas></lista-minhas-emendas>
+                <lista-minhas-emendas tipoLista="medidas-provisorias"></lista-minhas-emendas>
               </div>
             </div>
           </div>
@@ -40,12 +40,12 @@ export class DashboardEmendas extends LitElement {
             <div class="row">
               <div class="col-lg-4 offset-lg-2 col-md-6">
 
-                <lista-minhas-emendas><h5>Minhas emendas <span class="badge bg-primary">5</span></h5></lista-minhas-emendas>
+                <lista-minhas-emendas tipoLista="minhas-emendas"><h5>Minhas emendas <span class="badge bg-primary">5</span></h5></lista-minhas-emendas>
               
               </div>
               <div class="col-lg-4 col-md-6">
 
-                <lista-minhas-emendas><h5>Medidas provisórias recentes <span class="badge bg-primary">18</span></h5></lista-minhas-emendas>
+                <lista-minhas-emendas tipoLista="medidas-provisorias"><h5>Medidas provisórias recentes <span class="badge bg-primary">18</span></h5></lista-minhas-emendas>
 
               </div>
             </div>

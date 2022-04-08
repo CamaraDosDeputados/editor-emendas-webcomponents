@@ -1,7 +1,8 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import './form-busca.component.ts';
 import { dashboardEmendasCSS } from '../assets/css/components/dashboard-emendas.css';
+import './form-busca.component.ts';
+import './lista-minhas-emendas.component.ts';
 
 @customElement('dashboard-emendas')
 export class DashboardEmendas extends LitElement {
@@ -10,6 +11,7 @@ export class DashboardEmendas extends LitElement {
   render(): TemplateResult {
     {
       return html`
+      <div id="app" class="bs-eta">
         <div class="container">
           <form-busca></form-busca>
           <div class="d-md-none">
@@ -27,10 +29,10 @@ export class DashboardEmendas extends LitElement {
             </ul>
             <div class="tab-content" id="tabContent">
               <div class="tab-pane fade show active" id="minhasEmendas" role="tabpanel" aria-labelledby="minhas-emendas-tab">
-                <div></div>
+                <lista-minhas-emendas minhasEmendas="true"></lista-minhas-emendas>
               </div>
               <div class="tab-pane fade" id="medidasProvisorias" role="tabpanel" aria-labelledby="medidas-provisorias-tab">
-                <div></div>
+                <lista-minhas-emendas></lista-minhas-emendas>
               </div>
             </div>
           </div>
@@ -38,15 +40,18 @@ export class DashboardEmendas extends LitElement {
           <div class="d-none d-md-block">
             <div class="row">
               <div class="col-lg-4 offset-lg-2 col-md-6">
-                <h5>Minhas emendas <span class="badge bg-primary">5</span></h5>
-                <div></div>
+
+                <lista-minhas-emendas minhasEmendas="true"><h5>Minhas emendas <span class="badge bg-primary">5</span></h5></lista-minhas-emendas>
+              
               </div>
               <div class="col-lg-4 col-md-6">
-                <h5>Medidas provisórias recentes <span class="badge bg-primary">18</span></h5>
-                <div></div>
+
+                <lista-minhas-emendas><h5>Medidas provisórias recentes <span class="badge bg-primary">18</span></h5></lista-minhas-emendas>
+
               </div>
             </div>
           </div>
+        </div>
         </div>
       `;
     }

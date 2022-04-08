@@ -217,15 +217,48 @@ export const dashboardEmendasCSS = css`
       max-width: 1320px;
     }
   }
-  .bs-eta .d-md-none {
-    display: none !important;
+  .bs-eta .row {
+    --bs-eta-gutter-x: 1.5rem;
+    --bs-eta-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-eta-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-eta-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-eta-gutter-x));
+  }
+  .bs-eta .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-eta-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-eta-gutter-x) * 0.5);
+    margin-top: var(--bs-eta-gutter-y);
   }
   .bs-eta .d-none {
     display: none !important;
   }
-  .bs-eta .d-md-block {
-    display: block !important;
+  @media (min-width: 992px) {
+    .bs-eta .col-lg-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%;
+    }
+    .bs-eta .offset-lg-2 {
+      margin-left: 16.66666667%;
+    }
   }
+  @media (min-width: 768px) {
+    .bs-eta .col-md-6 {
+      flex: 0 0 auto;
+      width: 41%;
+    }
+    .bs-eta .d-md-none {
+      display: none !important;
+    }
+    .bs-eta .d-md-block {
+      display: block !important;
+    }
+  }
+
   .bs-eta .nav {
     display: flex;
     flex-wrap: wrap;
@@ -356,34 +389,7 @@ export const dashboardEmendasCSS = css`
   .bs-eta .fade:not(.show) {
     opacity: 0;
   }
-  .bs-eta .row {
-    --bs-eta-gutter-x: 1.5rem;
-    --bs-eta-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-eta-gutter-y));
-    margin-right: calc(-0.5 * var(--bs-eta-gutter-x));
-    margin-left: calc(-0.5 * var(--bs-eta-gutter-x));
-  }
-  .bs-eta .row > * {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-eta-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-eta-gutter-x) * 0.5);
-    margin-top: var(--bs-eta-gutter-y);
-  }
-  .bs-eta .col-lg-4 {
-    flex: 0 0 auto;
-    width: 33.33333333%;
-  }
-  .bs-eta .offset-lg-2 {
-    margin-left: 16.66666667%;
-  }
-  .bs-eta .col-md-6 {
-    flex: 0 0 auto;
-    width: 41%;
-  }
+
   .bs-eta .badge {
     --bs-eta-badge-padding-x: 0.65em;
     --bs-eta-badge-padding-y: 0.35em;

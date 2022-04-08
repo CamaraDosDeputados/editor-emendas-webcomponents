@@ -9,10 +9,21 @@ export class CardMenu extends LitElement {
   @property()
   minhasEmendas?: boolean;
 
+  showMenu(event: Event): void {
+    event.target?.parentElement.nextElementSibling.classList.add('show');
+  }
+
+  hideMenu(): void {
+    const nodeList = this.shadowRoot?.querySelectorAll('.dropdown-menu.show');
+    nodeList?.forEach(node => {
+      node.classList.remove('show');
+    });
+  }
+
   render(): TemplateResult {
     {
       return html`
-        <div class="dropdown">
+        <div class="dropdown" @mouseleave="${this.hideMenu}">
           <a
             class=""
             href="#"
@@ -21,6 +32,7 @@ export class CardMenu extends LitElement {
             data-bs-toggle="dropdown"
             aria-expanded="false"
             title="Menu de ações"
+            @click=${this.showMenu}
           >
             <span class="context-menu"></span>
           </a>

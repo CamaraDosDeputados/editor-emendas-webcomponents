@@ -19,7 +19,6 @@ export const cardCSS = css`
     border-bottom-left-radius: inherit;
   }
   .list-group-item-action {
-    width: 90%;
     color: #495057;
     text-align: inherit;
   }

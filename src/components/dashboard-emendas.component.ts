@@ -18,12 +18,12 @@ export class DashboardEmendas extends LitElement {
             <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="minhas-emendas-tab" data-bs-toggle="tab" data-bs-target="#minhasEmendas" type="button" role="tab" aria-controls="home" aria-selected="true">
-                    Minhas emendas 
+                    Minhas emendas
                     <!-- <span class="badge bg-secondary">5</span></button> -->
               </li>
               <li class="nav-item" role="presentation">
                 <button class="nav-link" id="medidas-provisorias-tab" data-bs-toggle="tab" data-bs-target="#medidasProvisorias" type="button" role="tab" aria-controls="profile" aria-selected="false">
-                    Medidas provisórias recentes 
+                    Medidas provisórias recentes
                     <!-- <span class="badge bg-secondary">18</span></button> -->
               </li>
             </ul>
@@ -39,10 +39,10 @@ export class DashboardEmendas extends LitElement {
 
           <div class="d-none d-md-block">
             <div class="row">
-              <div class="col-lg-4 offset-lg-2 col-md-6">
+              <div class="col-md-6 offset-md-0 col-lg-4 offset-lg-2">
 
                 <lista-minhas-emendas minhasEmendas="true"><h5>Minhas emendas <span class="badge bg-primary">5</span></h5></lista-minhas-emendas>
-              
+
               </div>
               <div class="col-lg-4 col-md-6">
 

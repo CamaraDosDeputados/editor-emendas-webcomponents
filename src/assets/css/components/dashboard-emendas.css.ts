@@ -389,9 +389,6 @@ export const dashboardEmendasCSS = css`
   .bs-eta .fade:not(.show) {
     opacity: 0;
   }
-<<<<<<< Updated upstream
-
-=======
   .bs-eta .row {
     --bs-eta-gutter-x: 1.5rem;
     --bs-eta-gutter-y: 0;
@@ -423,7 +420,6 @@ export const dashboardEmendasCSS = css`
   .bs-eta .offset-md-0 {
     margin-left: 0;
   }
->>>>>>> Stashed changes
   .bs-eta .badge {
     --bs-eta-badge-padding-x: 0.65em;
     --bs-eta-badge-padding-y: 0.35em;

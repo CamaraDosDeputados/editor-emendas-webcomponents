@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { cardMenuCSS } from '../assets/css/components/card-menu.css';
+import { cardMenuCSS } from '../../assets/css/components/versao-1/card-menu.css';
 
 @customElement('card-menu')
 export class CardMenu extends LitElement {

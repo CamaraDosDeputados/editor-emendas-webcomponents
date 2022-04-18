@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { formBuscaCSS } from '../assets/css/components/form-busca.css';
+import { formBuscaCSS } from '../../assets/css/components/versao-1/form-busca.css';
 
 @customElement('form-busca')
 export class FormBusca extends LitElement {

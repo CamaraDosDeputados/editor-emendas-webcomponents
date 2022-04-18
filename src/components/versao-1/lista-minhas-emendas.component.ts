@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { listaMinhasEmendasCSS } from '../assets/css/components/lista-minhas-emendas.css';
+import { listaMinhasEmendasCSS } from '../../assets/css/components/versao-1/lista-minhas-emendas.css';
 import './card-minhas-emendas.component.ts';
 import './card-medida-provisoria.component.ts';
 

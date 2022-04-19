@@ -18,12 +18,12 @@ export class DashboardEmendas extends LitElement {
           <form-busca></form-busca>
           <div class="d-md-none">
             <sl-tab-group>
-              <sl-tab slot="nav" panel="general">Minhas emendas</sl-tab>
-              <sl-tab slot="nav" panel="custom">Medidas provisórias recentes</sl-tab>
-              <sl-tab-panel name="general">
+              <sl-tab slot="nav" panel="minhas-emendas">Minhas emendas</sl-tab>
+              <sl-tab slot="nav" panel="medidas-provisorias">Medidas provisórias recentes</sl-tab>
+              <sl-tab-panel name="minhas-emendas">
                   <lista-minhas-emendas minhasEmendas="true"></lista-minhas-emendas>
               </sl-tab-panel>
-              <sl-tab-panel name="custom">
+              <sl-tab-panel name="medidas-provisorias">
                   <lista-minhas-emendas></lista-minhas-emendas>
               </sl-tab-panel>
             </sl-tab-group>

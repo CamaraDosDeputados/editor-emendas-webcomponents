@@ -1,6 +1,13 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { cardMenuCSS } from '../../assets/css/components/versao-1/card-menu.css';
+import '@shoelace-style/shoelace/dist/themes/light.css';
+import '@shoelace-style/shoelace/dist/components/button/button';
+import '@shoelace-style/shoelace/dist/components/dropdown/dropdown';
+import '@shoelace-style/shoelace/dist/components/icon/icon';
+import '@shoelace-style/shoelace/dist/components/divider/divider';
+import '@shoelace-style/shoelace/dist/components/menu/menu';
+import '@shoelace-style/shoelace/dist/components/menu-item/menu-item';
 
 @customElement('card-menu')
 export class CardMenu extends LitElement {
@@ -9,56 +16,28 @@ export class CardMenu extends LitElement {
   @property()
   minhasEmendas?: boolean;
 
-  showMenu(event: Event): void {
-    event.target?.parentElement.nextElementSibling.classList.add('show');
-  }
-
-  hideMenu(): void {
-    const nodeList = this.shadowRoot?.querySelectorAll('.dropdown-menu.show');
-    nodeList?.forEach(node => {
-      node.classList.remove('show');
-    });
-  }
-
   render(): TemplateResult {
     {
       return html`
-        <div class="dropdown" @mouseleave="${this.hideMenu}">
-          <a
-            class=""
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            title="Menu de ações"
-            @click=${this.showMenu}
-          >
+        <sl-dropdown>
+          <sl-button slot="trigger" caret>
             <span class="context-menu"></span>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          </sl-button>
+          <sl-menu>
             ${this.minhasEmendas
-              ? html` <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  <li><a class="dropdown-item" href="#">Encaminhar</a></li>
-                  <li><hr class="dropdown-divider" /></li>`
+              ? html` <sl-menu-item>Editar</sl-menu-item>
+                  <sl-menu-item>Excluir</sl-menu-item>
+                  <sl-menu-item>Encaminhar</sl-menu-item>
+                  <sl-divider></sl-divider>`
               : ''}
-            <li>
-              <a class="dropdown-item disabled" href="#">Nova emenda</a>
-            </li>
-            <li><a class="dropdown-item ps-4" href="#">Padrão</a></li>
-            <li>
-              <a class="dropdown-item ps-4" href="#">Onde couber</a>
-            </li>
-            <li>
-              <a class="dropdown-item ps-4" href="#">Substitutivo</a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#">Quadro de emendas</a>
-            </li>
-          </ul>
-        </div>
+            <sl-menu-item disabled>Nova emenda</sl-menu-item>
+            <sl-menu-item>Padrão</sl-menu-item>
+            <sl-menu-item>Onde couber</sl-menu-item>
+            <sl-menu-item>Substitutivo</sl-menu-item>
+            <sl-divider></sl-divider>
+            <sl-menu-item>Quadro de emendas</sl-menu-item>
+          </sl-menu>
+        </sl-dropdown>
       `;
     }
   }

@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { dashboardEmendasCSS } from '../../assets/css/components/versao-1/dashboard-emendas.css';
+import { dashboardEmendasCSS } from '../../assets/css/components/v2/dashboard-emendas.css';
 import './form-busca.component.ts';
 import './lista-minhas-emendas.component.ts';
 import '@shoelace-style/shoelace/dist/themes/light.css';

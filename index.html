@@ -7,11 +7,19 @@
   <link href="/src/assets/css/main.css" rel="stylesheet" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editor Emendas WebComponents</title>
-  <script type="module" src="/src/components/versao-1/dashboard-emendas.component.ts"></script>
+  <script type="module" src="/src/components/v2/dashboard-emendas.component.ts"></script>
+  <script type="module" src="/src/components/v1/card-total-emendas.component.ts"></script>
+  <script type="module" src="/src/components/v1/card-busca.component.ts"></script>
+  <script type="module" src="/src/components/v1/list-emendas.component.ts"></script>
 </head>
 
 <body>
-  <dashboard-emendas></dashboard-emendas>
+  <!-- <dashboard-emendas></dashboard-emendas> -->
+  <div style="display: flex; margin: 1rem;">
+    <card-total-emendas></card-total-emendas>
+    <card-busca></card-busca>
+  </div>
+  <list-emendas minhas-emendas="true"></list-emendas>
 </body>
 
 </html>

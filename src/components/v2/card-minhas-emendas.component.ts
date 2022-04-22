@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { cardCSS } from '../../assets/css/components/versao-1/card.css';
+import { cardCSS } from '../../assets/css/components/v2/card.css';
 import './card-menu.component.ts';
 
 @customElement('card-minhas-emendas')

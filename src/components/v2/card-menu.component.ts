@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { cardMenuCSS } from '../../assets/css/components/versao-1/card-menu.css';
+import { cardMenuCSS } from '../../assets/css/components/v2/card-menu.css';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace/dist/components/button/button';
 import '@shoelace-style/shoelace/dist/components/dropdown/dropdown';

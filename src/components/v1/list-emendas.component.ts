@@ -6,51 +6,36 @@ import '@shoelace-style/shoelace';
 import './card-emenda.component.ts';
 import { listEmendasCSS } from '../../assets/css/components/v1/list-emendas.css';
 import folderSVG from '@shoelace-style/shoelace/dist/assets/icons/folder2-open.svg';
+import { Proposicao } from '../v2/proposicao.service';
 
 @customElement('list-emendas')
 export class ListEmendas extends LitElement {
   static styles = listEmendasCSS;
 
-  @property({ type: Array })
-  emendas = [
-    {
-      identificacao: 'MPV 1096/2022',
-      ementa:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non',
-    },
-    {
-      identificacao: 'MPV 1097/2022',
-      ementa:
-        'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non',
-    },
-  ];
   @property({ attribute: 'minhas-emendas' })
   minhasEmendas?: boolean;
+
+  static get properties() {
+    return {
+      data: { type: Object },
+    };
+  }
 
   render(): TemplateResult {
     {
       return html`
         <div class="title-list">
-          ${this.minhasEmendas
-            ? html`<h3>Minhas Emendas</h3>
-                <sl-badge variant="primary" pill>
-                  ${this.emendas.length}
-                </sl-badge>
-                <sl-button size="small" pill>
-                  <sl-icon src="${folderSVG}"></sl-icon> Abrir emenda do disco
-                </sl-button>`
-            : html`<h3>Parametrizada</h3>
-                <sl-badge variant="primary" pill>
-                  {this.emendas.length}
-                </sl-badge>`}
+          <h3>Parametrizada</h3>
+          <sl-badge variant="primary" pill> ${this.data.length} </sl-badge>
         </div>
         ${repeat(
-          this.emendas,
+          this.data,
           emenda => html`
             <card-emenda
-              identificacao=${emenda.identificacao}
+              identificacao=${emenda.descricaoIdentificacao}
               ementa=${emenda.ementa}
               minha-emenda=${this.minhasEmendas}
+              .proposicao=${emenda}
             ></card-emenda>
           `
         )}

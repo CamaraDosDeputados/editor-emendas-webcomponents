@@ -164,7 +164,7 @@ export const formBuscaCSS = css`
     opacity: var(--bs-eta-btn-disabled-opacity);
   }
   .btn-primary {
-    --bs-eta-btn-color: #fff;
+    --bs-eta-btn-color: #0d6efd;
     --bs-eta-btn-bg: #0d6efd;
     --bs-eta-btn-border-color: #0d6efd;
     --bs-eta-btn-hover-color: #fff;

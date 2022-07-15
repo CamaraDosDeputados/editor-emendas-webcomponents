@@ -2,22 +2,29 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace';
-import folderSVG from '@shoelace-style/shoelace/dist/assets/icons/folder2-open.svg';
-import trashSVG from '@shoelace-style/shoelace/dist/assets/icons/trash3.svg';
 import journalSVG from '@shoelace-style/shoelace/dist/assets/icons/journal-code.svg';
 import { cardEmendaCSS } from '../../assets/css/components/v1/card-emenda.css';
+import { Proposicao } from '../v2/proposicao.service';
 
 @customElement('card-emenda')
 export class CardEmenda extends LitElement {
   static styles = cardEmendaCSS;
 
   @property({ type: String })
-  identificacao = 'MPV 1096/2022';
+  identificacao = '';
   @property({ type: String })
-  ementa =
-    'Abre crédito extraordinário, em favor do Ministério do Desenvolvimento Regional, no valor de R$ 550.000.000,00, para o fim que especifica.';
-  @property({ attribute: 'minha-emenda' })
-  minhaEmenda?: boolean;
+  ementa = '';
+
+  @property({ type: Object }) proposicao = {};
+
+  private _criarEmenda(tipoEmenda: string): void {
+    this.dispatchEvent(
+      new CustomEvent('proposicao', {
+        tipoEmenda: tipoEmenda,
+        proposicao: this.proposicao,
+      })
+    );
+  }
 
   render(): TemplateResult {
     {
@@ -44,11 +51,16 @@ export class CardEmenda extends LitElement {
                 <sl-icon src="${journalSVG}"></sl-icon> Nova emenda
               </sl-button>
               <sl-menu>
-                <sl-menu-item value="padrao"> Padrão </sl-menu-item>
-                <sl-menu-item value="ondecouber">
+                <sl-menu-item @click=${() => this._criarEmenda('padrao')}>
+                  Padrão
+                </sl-menu-item>
+                <sl-menu-item @click=${() => this._criarEmenda('ondeCouber')}>
                   Artigo "Onde couber"
                 </sl-menu-item>
-                <sl-menu-item value="substitutivo" disabled>
+                <sl-menu-item
+                  @click=${() => this._criarEmenda('substitutivo')}
+                  disabled
+                >
                   Substitutivo
                 </sl-menu-item>
               </sl-menu>

@@ -8,6 +8,7 @@ import '@shoelace-style/shoelace/dist/components/icon/icon';
 import '@shoelace-style/shoelace/dist/components/divider/divider';
 import '@shoelace-style/shoelace/dist/components/menu/menu';
 import '@shoelace-style/shoelace/dist/components/menu-item/menu-item';
+import { Proposicao } from './proposicao.service';
 
 @customElement('card-menu')
 export class CardMenu extends LitElement {
@@ -15,6 +16,17 @@ export class CardMenu extends LitElement {
 
   @property()
   minhasEmendas?: boolean;
+
+  @property({ type: Object }) proposicao = {};
+
+  private _criarEmenda(tipoEmenda: string): void {
+    this.dispatchEvent(
+      new CustomEvent('proposicao', {
+        tipoEmenda: tipoEmenda,
+        proposicao: this.proposicao,
+      })
+    );
+  }
 
   render(): TemplateResult {
     {
@@ -31,9 +43,15 @@ export class CardMenu extends LitElement {
                   <sl-divider></sl-divider>`
               : ''}
             <sl-menu-item disabled>Nova emenda</sl-menu-item>
-            <sl-menu-item>Padrão</sl-menu-item>
-            <sl-menu-item>Onde couber</sl-menu-item>
-            <sl-menu-item>Substitutivo</sl-menu-item>
+            <sl-menu-item @click=${() => this._criarEmenda('padrao')}
+              >Padrão</sl-menu-item
+            >
+            <sl-menu-item @click=${() => this._criarEmenda('ondeCouber')}
+              >Onde couber</sl-menu-item
+            >
+            <sl-menu-item @click=${() => this._criarEmenda('substitutivo')}
+              >Substitutivo</sl-menu-item
+            >
             <sl-divider></sl-divider>
             <sl-menu-item>Quadro de emendas</sl-menu-item>
           </sl-menu>

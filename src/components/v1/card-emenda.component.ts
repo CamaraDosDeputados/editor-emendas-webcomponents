@@ -1,10 +1,6 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import '@shoelace-style/shoelace/dist/themes/light.css';
-import '@shoelace-style/shoelace';
-import journalSVG from '@shoelace-style/shoelace/dist/assets/icons/journal-code.svg';
 import { cardEmendaCSS } from '../../assets/css/components/v1/card-emenda.css';
-import { Proposicao } from '../v2/proposicao.service';
 
 @customElement('card-emenda')
 export class CardEmenda extends LitElement {
@@ -22,7 +18,7 @@ export class CardEmenda extends LitElement {
       new CustomEvent('proposicao', {
         tipoEmenda: tipoEmenda,
         proposicao: this.proposicao,
-      })
+      } as Object)
     );
   }
 
@@ -36,19 +32,11 @@ export class CardEmenda extends LitElement {
             ${this.ementa}
             <br />
             <br />
-            ${this.minhaEmenda
-              ? html`
-                  <sl-button size="small" pill>
-                    <sl-icon src="${folderSVG}"></sl-icon> Abrir
-                  </sl-button>
-                  <sl-button size="small" pill>
-                    <sl-icon src="${trashSVG}"></sl-icon> Remover da lista
-                  </sl-button>
-                `
-              : ''}
             <sl-dropdown>
               <sl-button slot="trigger" size="small" pill caret>
-                <sl-icon src="${journalSVG}"></sl-icon> Nova emenda
+              <sl-icon
+                  src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/assets/icons/journal-code.svg"
+                ></sl-icon> Nova emenda
               </sl-button>
               <sl-menu>
                 <sl-menu-item @click=${() => this._criarEmenda('padrao')}>

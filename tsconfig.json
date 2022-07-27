@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "target": "es2018",
     "module": "esnext",
     "lib": ["es2017", "dom", "dom.iterable"],
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "./types",
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -17,5 +18,6 @@
     "useDefineForClassFields": false,
   },
   "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -8,7 +8,6 @@ import '@shoelace-style/shoelace/dist/components/icon/icon';
 import '@shoelace-style/shoelace/dist/components/divider/divider';
 import '@shoelace-style/shoelace/dist/components/menu/menu';
 import '@shoelace-style/shoelace/dist/components/menu-item/menu-item';
-import { Proposicao } from './proposicao.service';
 
 @customElement('card-menu')
 export class CardMenu extends LitElement {
@@ -24,7 +23,7 @@ export class CardMenu extends LitElement {
       new CustomEvent('proposicao', {
         tipoEmenda: tipoEmenda,
         proposicao: this.proposicao,
-      })
+      } as Object)
     );
   }
 

@@ -1,20 +1,18 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { formBuscaCSS } from '../../assets/css/components/v2/form-busca.css';
-import { Proposicao, ProposicaoService } from './proposicao.service';
-import logo from '../../../src/loading.gif';
+import { ProposicaoService } from './proposicao.service';
 
 @customElement('form-busca')
 export class FormBusca extends LitElement {
   static styles = formBuscaCSS;
-  proposicoes: Array<Proposicao> = [];
-
+  proposicoes: {};
   @property({ type: String })
   sigla = 'MPV';
   @property({ type: String })
-  numero = null;
+  numero = '';
   @property({ type: Number })
-  ano = '2022';
+  ano = 2022;
   @property({ attribute: 'url' })
   urlServicoPesquisaProposicoes?: string;
 
@@ -23,21 +21,21 @@ export class FormBusca extends LitElement {
   async _pesquisar() {
     try {
       this.isLoading = true;
-      const proposicaoService = new ProposicaoService(this.urlServicoPesquisaProposicoes);
-      const url = proposicaoService.pesquisarProposicoes(this.sigla, this.numero, this.ano);
+      const proposicaoService = new ProposicaoService(
+        this.urlServicoPesquisaProposicoes || ''
+      );
+      const url = proposicaoService.pesquisarProposicoes(
+        this.sigla,
+        this.numero,
+        this.ano
+      );
       const response = await fetch(url);
       const proposicoes = await response.json();
-      const shadow = this.shadowRoot;
-      const childComponent = shadow.querySelector('list-emendas');
-      childComponent.data = proposicoes;
+      this.proposicoes = proposicoes;
       this.isLoading = false;
     } catch (error) {
       console.log(error);
     }
-  }
-
-  articleTemplate() {
-    return this.isLoading ? html`<img src=${logo} alt="loading..." />` : '';
   }
 
   render(): TemplateResult {
@@ -81,9 +79,13 @@ export class FormBusca extends LitElement {
           </button>
         </form>
         <br />
-        ${this.isLoading ? html`<img src=${logo} alt="loading..." />` : ''}
+        ${this.isLoading
+          ? html`<sl-spinner
+              style="font-size: 50px; --track-width: 10px;"
+            ></sl-spinner>`
+          : ''}
 
-        <list-emendas></list-emendas>
+        <list-emendas .proposicoes=${this.proposicoes}></list-emendas>
       `;
     }
   }

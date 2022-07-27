@@ -3,7 +3,7 @@ export class ProposicaoService {
   url: string = '';
 
   constructor(urlServicoPesquisaProposicoes?: string) {
-    this.urlServicoPesquisaProposicoes = urlServicoPesquisaProposicoes;
+    this.urlServicoPesquisaProposicoes = urlServicoPesquisaProposicoes || '';
   }
 
   pesquisarProposicoes(sigla: string, numero: string, ano: number) {

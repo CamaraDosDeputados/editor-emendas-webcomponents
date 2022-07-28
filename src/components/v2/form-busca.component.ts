@@ -2,6 +2,7 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { formBuscaCSS } from '../../assets/css/components/v2/form-busca.css';
 import { ProposicaoService } from './proposicao.service';
+import { shoelaceLightThemeStyles } from '../../assets/css/components/v2/shoelace.theme.light.css';
 
 @customElement('form-busca')
 export class FormBusca extends LitElement {
@@ -41,6 +42,7 @@ export class FormBusca extends LitElement {
   render(): TemplateResult {
     {
       return html`
+        ${shoelaceLightThemeStyles}
         <form class="was-validated eta-search-form mt-3 mt-md-5 mb-3 mb-md-5">
           <input
             type="search"

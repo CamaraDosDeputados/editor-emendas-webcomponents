@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
 import './card-emenda.component.ts';
 import { listEmendasCSS } from '../../assets/css/components/v1/list-emendas.css';
+import { shoelaceLightThemeStyles } from '../../assets/css/components/v2/shoelace.theme.light.css';
 
 @customElement('list-emendas')
 export class ListEmendas extends LitElement {
@@ -15,6 +16,7 @@ export class ListEmendas extends LitElement {
   render(): TemplateResult {
     {
       return html`
+      ${shoelaceLightThemeStyles}
         <div class="title-list">
           <h3>Parametrizada</h3>
           <sl-badge variant="primary" pill> ${this.proposicoes.length} </sl-badge>

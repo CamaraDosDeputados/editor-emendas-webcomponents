@@ -1,6 +1,7 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { cardEmendaCSS } from '../../assets/css/components/v1/card-emenda.css';
+import { shoelaceLightThemeStyles } from '../../assets/css/components/v2/shoelace.theme.light.css';
 
 @customElement('card-emenda')
 export class CardEmenda extends LitElement {
@@ -25,6 +26,7 @@ export class CardEmenda extends LitElement {
   render(): TemplateResult {
     {
       return html`
+      ${shoelaceLightThemeStyles}
         <sl-card class="card-emenda">
           <sl-avatar initials="MPV" label="Medida Provisória"></sl-avatar>
           <div>

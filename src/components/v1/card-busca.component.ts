@@ -2,7 +2,7 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace';
-import searchSVG from '@https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/assets/icons/journal-code.svg';
+import searchSVG from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/assets/icons/journal-code.svg';
 import { cardBuscaCSS } from '../../assets/css/components/v1/card-busca.css';
 import { cardEmendaCSS } from '../../assets/css/components/v1/card-emenda.css';
 

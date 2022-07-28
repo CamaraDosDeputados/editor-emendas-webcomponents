@@ -2,7 +2,7 @@ import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace';
-import workspaceSVG from '@https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/assets/icons/person-workspace.svg';
+import workspaceSVG from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.0.0-beta.78/dist/assets/icons/person-workspace.svg';
 import { cardTotalEmendasCSS } from '../../assets/css/components/v1/card-total-emendas.css';
 
 @customElement('card-total-emendas')
